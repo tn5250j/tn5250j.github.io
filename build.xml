@@ -66,7 +66,7 @@
   <target name="prepare-docs" depends="init">
 
     <property name="centipede.tools.cents.forrest.loglevel" value="ERROR"/>
-    <property name="use.skin" value="bert"/>
+    <property name="use.skin" value="avalon-site"/>
 
     <property name="documentation.context.dir"  value="${resource.dir}"/>
     <property name="documentation.source.dir"   value="${context.dir}"/>
