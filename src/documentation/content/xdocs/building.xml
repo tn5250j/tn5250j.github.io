@@ -1,41 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
-<document> 
-  <header> 
-    <title>Building with Ant</title> 
-  </header> 
-  <body> 
-  	<p>
-		I have only tested this with ant build 1.4.1 so do not know if it is backwards
-		compatible with previous versions.</p>
-		<p>
-		A lot of new options and targets have been added by Christian Geisert.  This
-		really makes the build process more flexible and complete.  Great thanks!!!!
-		For a list of these see step 7. below.</p>
-		<note>
-		The new .jar file will be in the dist directly and named tn5250j and not
-		my5250j.</note>
-		<section><title>Steps to get started after setting up ant</title>
-			<p>1. Create a base directory to place source</p>
-			<p>2. Create two directories beneath the base directory called lib and src
-			for example your directory structure should look like the following:</p>
-			<source>
+<document>
+  <header>
+    <title>Building with Ant</title>
+  </header>
+  <body>
+        <p>
+        I have only tested this with ant build 1.4.1 to 1.5 so do not know if it is backwards
+        compatible with previous versions.</p>
+        <p>
+        A lot of new options and targets have been added by Christian Geisert.  This
+        really makes the build process more flexible and complete.  Great thanks!!!!
+        For a list of these see step 7. below.
+        </p>
+        <note>
+        The new .jar file will be in the dist directly and named tn5250j and not
+        my5250j.  This is for releases 0.5.5 and forwards.
+        </note>
+
+        <section><title>Getting Ant</title>
+        <p>
+        <link href="http://jakarta.apache.org/ant/index.html">Apache Ant</link> is a
+        Java-based build tool and is part of the
+        <link href="http://jakarta.apache.org/">Apache Jakarta Project</link>
+        </p>
+        <p>
+        It can be found at the following link:
+        </p>
+        <p>
+        <link href="http://jakarta.apache.org/ant/index.html">http://jakarta.apache.org/ant/index.html</link>
+        </p>
+        </section>
+        <section><title>Installing Ant</title>
+
+           <p>
+           Please refer to the <link href="http://jakarta.apache.org/ant/manual/index.html">Ant Documentation</link>
+           </p>
+           <p>
+           <link href="http://jakarta.apache.org/ant/manual/index.html">http://jakarta.apache.org/ant/manual/index.html</link>
+           </p>
+
+        </section>
+        <section><title>Obtaining the tn5250j source</title>
+            <p>
+            You can obtain the current sources here:
+
+            </p>
+            <p>
+               <ul>
+                 <li><link href="http://sourceforge.net/project/showfiles.php?group_id=22923">Sources</link></li>
+                 <li><link href="http://cvs.sourceforge.net/cvstarballs/tn5250j-cvsroot.tar.gz">Nightly CVS Tarball</link></li>
+                 <li><link href="http://sourceforge.net/cvs/?group_id=22923">Anonymous CVS Repository Access</link></li>
+               </ul>
+            </p>
+            <source>
+            cvs -d:pserver:anonymous@cvs.tn5250j.sourceforge.net:/cvsroot/tn5250j login
+
+            cvs -z3 -d:pserver:anonymous@cvs.tn5250j.sourceforge.net:/cvsroot/tn5250j co tn5250j
+            </source>
+        </section>
+
+        <section><title>Steps to get started after setting up ant</title>
+            <p>1. Create a base directory to place source</p>
+            <p>2. Create two directories beneath the base directory called lib and src
+            for example your directory structure should look like the following:</p>
+            <note>
+            As of 0.5.5 the lib directory is created for you during cvs checkout and also
+            provided within the source downloads.
+            </note>
+            <source>
 base directory
    |
    + - lib
    |
    + - src
-	 		</source>
-			<p>
-			3. Unzip and place all source files from tn5250j source zip file that was
-			downloaded into src directory.  This includes the Meta-inf directory.</p>
-			<p>
-			!! As of the newest build.xml the manifest file is built for you automagically.</p>
-			<p>
-			4. Place the included build.xml file into the base directory.</p>
-			<p>5. Place the extra .jar files used for mailing in the lib directory.</p>
-			<note>this is very important or some modules will not compile</note>
-			<p>
+            </source>
+            <p>
+            3. Unzip and place all source files from tn5250j source zip file that was
+            downloaded into src directory.</p>
+            <p>
+            4. Place the included build.xml file into the base directory.
+            </p>
+            <p>
+            5. Place the extra .jar files used for mailing in the lib directory.
+            </p>
+            <note>this is very important or some modules will not compile</note>
+            <p>
 			You can download the e-mail api's from sun.  You will need two packages.
       <link href="http://java.sun.com/products/javamail/">http://java.sun.com/products/javamail/</link>
       <link href="http://java.sun.com/products/javabeans/glasgow/jaf.html">http://java.sun.com/products/javabeans/glasgow/jaf.html</link>
@@ -47,7 +97,11 @@ base directory
 					<li>mail.jar</li>
 					<li>mailapi.jar</li>
 					<li>smtp.jar</li>
-			 </ul>
+			    </ul>
+            <note>
+            Scripting jython.jar file is included in the tn5250j-0.x.x-bin-scripting.zip file
+            and is required as well as of 0.5.5
+            </note>
 		<p>
 		6. Now execute ant using one of the methods described in the ant documentation.
 		</p>
@@ -67,39 +121,38 @@ set JAVA_HOME=C:\jdk1.3.1
 
 call %ANT_HOME%\bin\ant -buildfile build.xml %1 %2 %3 %4 %5 %6 %7 %8 %9
 </source>
-
-			<note>!*** NOTE FOR JAVA 1.4 ***
-			use the compile-dep command line parameter supported by the build.xml file.
-			This will allow the compilation of the source using deprecation options
-			</note>
-			<p>
-			For more information on the command line parameters that the build process
-			supports execute the following:</p>
-			<source>
+    <p>
+    For more information on the command line parameters that the build process
+    supports execute the following:</p>
+    <source>
 >ant -projecthelp
-			</source>
+    </source>
+    </section>
 
-			<p>7. Main targets:</p>
+   <section><title>Main Build Targets</title>
+    <p>
 <source>
- all               Clean, Compile, Jar
- clean             Cleanup your workspace (delete build-directory, ...)
- compile           Compile your source-files
- compile-dep       Compile your source-files with deprecation turned on
- dist              Creates all distribution archives
- dist-bin          Create a Zip and TGZ Archives with all the binary files
- dist-bin-prepare  Prepares binary distribution
- dist-bin-tgz      Create a Tgz-File with all the binary files
- dist-bin-zip      Create a Zip-File with all the binary files
- dist-src          Create a Zip and TGZ Archives with all source files
- dist-src-prepare  Prepares source distribution
- dist-src-tgz      Create a Tgz-File with all the source files
- dist-src-zip      Create a Zip-File with all the source files
- info              Prints a short summary of this project
- javadoc           Creates the javadoc API documentation
- package           Create a Jar-File of your compiled classes
+ all                              Clean, Compile, Jar
+ clean                            Cleanup your workspace (delete build-directory, ...)
+ compile                          Compile your source-files
+ compile-dep                      Compile your source-files with deprecation turned on
+ dist                             Creates all distribution archives
+ dist-bin                         Create a Zip and TGZ Archives with all the binary files
+ dist-bin-nosubdir-zip            Create a Zip-File with all the binary files no sub directory
+ dist-bin-prepare                 Prepares binary distribution
+ dist-bin-scripting-nosubdir-zip  Create a Zip-File with all the binary files no sub directory
+ dist-bin-tgz                     Create a Tgz-File with all the binary files
+ dist-bin-zip                     Create a Zip-File with all the binary files
+ dist-src                         Create a Zip and TGZ Archives with all source files
+ dist-src-prepare                 Prepares source distribution
+ dist-src-tgz                     Create a Tgz-File with all the source files
+ dist-src-zip                     Create a Zip-File with all the source files
+ info                             Prints a short summary of this project
+ javadoc                          Creates the javadoc API documentation
+ package                          Create a Jar-File of your compiled classes
 </source>
-
-		</section>
+    </p>
+    </section>
 
   </body>
 </document>
