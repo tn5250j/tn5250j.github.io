@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faqs PUBLIC "-//APACHE//DTD FAQ V1.1//EN" "dtd/faq-v11.dtd">
+
+<faqs title="Frequently Asked Questions">
+
+<faq>
+ <question>
+  Why do the generated documents look a little strange?
+ </question>
+ <answer>
+  <p>
+   Because we are in transition to the new document-v11.dtd
+   and there are still some stylesheets that need tweaking.
+   See the <link href="document-v11.html">Demo document-v11</link>
+  </p>
+ </answer>
+</faq>
+
+<faq>
+ <question>
+  I have checked out a working copy of <code>xml-forrest</code> CVS, now what?
+ </question>
+ <answer>
+  <p>
+   Run &quot;<code>./build.sh docs</code>&quot; to see the initial documentation
+   for Forrest. A new Forrest skin is under development ...
+   &quot;<code>./build.sh clean docs -Duse.skin=bert</code>&quot;
+  </p>
+ </answer>
+</faq>
+
+<faq>
+ <question>
+  I gather that I will be able to use the Forrest infrastructure to build
+  my own website.
+ </question>
+ <answer>
+  <p>
+   That is correct. Many of us want to do that, and that is partially why we
+   are working here. Forrest is designed to not only build websites for
+   the various Apache projects, but also so that you can apply your own skins
+   to your own content. Try this ...
+   &quot;<code>./build.sh clean docs -Duse.skin=basic</code>&quot;
+   then copy the basic skin to make your own.
+  </p>
+  <p>
+   However, it is not yet ready. So please help us to reach that stage.</p>
+ </answer>
+</faq>
+
+<faq>
+ <question>
+  How can i help?
+ </question>
+ <answer>
+  <p>
+   Join the forrest-dev <link href="mail-lists.html">mailing list</link>
+   and help to discuss it. Read the Forrest Primer for an overview.
+   See the To Do List and choose something that
+   interests you.
+  </p>
+ </answer>
+</faq>
+
+</faqs>

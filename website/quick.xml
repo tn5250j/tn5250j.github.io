@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document> 
+  <header> 
+    <title>Quick Start</title> 
+  </header> 
+  <body> 
+    <p>
+    <code>java -jar my5250.jar</code></p>
+    <p>
+    Select the configure button to define sessions when the session selection
+    window is displayed.</p>
+    <p>or</p>
+    <p><code>java -jar my5250.jar host -p port</code></p>
+    <p>or</p>
+    <p><code>java -jar my5250.jar host</code></p>
+    <section><title>Command line options(If you do not want to use the configure button)</title>
+    <source>
+    -p port ----> port to be used - default is port 23 if not specified
+
+    -f filename ----> configuration file
+
+    -t ----> use system name instead of system id Host IP Address/DNS Host name.
+
+    -cp ---> Code Page
+                Supported code pages
+                --------------------
+                37 - US default
+                37PT - Portuguese
+                273 - German
+                280 - Italian
+                284 - Spanish
+                297 - French
+                500-ch - Switzerland
+                870-pl - Poland
+
+                Let me know of others that are needed.  The code pages can be
+                updated quickly.
+
+    -e ----> Enhanced 5250 option.  This gives graphical windows, edit masked
+               fields, continued edit fields, etc...
+               ** Note ** not all enhanced options are implemented as yet.
+               I have only implemented what our applications use here and should
+               be considered as improving (buggy :-)).  At our site we have not
+               had any problems with it yet (note the word yet please).
+               Watch for further announcements and improvements.
+
+    -L ----> Specify the locale/language to be used for literals.  The default
+               is the locale of the system if it is supported.
+
+                  Available Languages
+                     Default -> Supported locale of the system or English
+                     Spanish -> -L es
+                     German -> -L de
+                     French  -> -L fr
+                     Portuguese -> -L pt
+                     Catalan -> -L ca_ES
+                     Dutch -> -L nl
+                     Italian -> -L it
+                     Polish -> -L pl
+
+    -132 ----> Change to 27*132 column.
+
+    -s ------> Start up emulator using an existing configured session
+                  you can specify multiple of these as in -s xxxx -s yyyy
+                  and at startup the emulator will start up session xxxx and
+                  yyyy
+
+               ==========================================================
+               **** NOTE **** Session names are case sensitive!!!!!!!
+               ==========================================================
+
+
+    -width --> Start up emulator using the width specified
+
+    -height -> Start up emulator using the height specified
+
+    -d ------> if no other instances are running and the -nc options is not
+               specified then start up the bootstrap monitoring thread
+
+    -nc -----> no check for other tn5250j instances that are running
+                    A new frame will be created within another instance
+                    of JVM
+
+    -noembed-> Do not add a new session tab but open in new frame.  Default
+               is embed so add a new session tab in the visible frame.
+
+    -usp ----> Use Socks Proxy
+    -sph ----> Socks Proxy Host - please read step 10 below.
+               I do believe that you can set the user name and password to be
+               used by supplying the following on the the command line to start
+               the emulator.
+               -Djava.net.socks.username="username" &lt;- replace user name with yours
+               -Djava.net.socks.password="password" &lt;- replace password with yours
+
+               Example command line:
+               =====================
+               java -Djava.net.socks.username="kjp1" -Djava.net.socks.password="tn5250j" -jar my5250.jar
+
+               I have not tried this so please let me know if it works.
+
+    -spp ----> Socks Proxy Port
+
+    -dn -----> This option takes a device name parameter to be used
+               by the Host.  The device name is 10 characters in
+               length and following rfc2877 it the device name
+               is already allocated then the device name will be
+               sent again with a consecutive number appended.  If
+               the device name plus appended sequencial number is
+               longer than 10 characters then the device name is
+               truncated until the device name and the appended
+               sequential number fits within 10 characters.
+
+             For example:
+             -dn DEVICEUSER
+
+             This will send the device name on allocation to the host
+             as DEVICEUSER.  If there is already a session allocated
+             with device name DEVICEUSER then the emulator will send
+             the device name with a 1 (number one) appended as
+             DEVICEUSE1 if this is allocated then DEVICEUSE2 and so
+             on until the host says no more attempts are allowed or
+             the same device name is sent twice in succession as per
+             rfc2877.
+
+             This option will also change the session name to that
+             of the allocated device name.
+
+    -MDI ----> Use the MDI interface represented by JInternalFrames instead of
+               tabs.
+               --------- N O T E ---------
+               New feature for now and is in testing.  Please send comments/
+               feedback/bugs.
+      </source>
+    </section>
+    <section><title>Example of command line options</title>
+    <p>
+    <code>java -jar my5250.jar -L es</code></p>
+    <p>
+    This will change the default language of the system to use the languange
+    translations of what is specified.</p>
+    <p>
+    <code>java -jar my5250.jar hostAS400 -f hostAS400.prop</code></p>
+    <p>
+       This will connect to hostAS400 and use the file hostAS400.prop as the
+       property file.  Any properties that are changed will be saved to this
+       file under the current directory.  It does not have to exist as it will
+       be created.  If there are any properties saved from a previous session
+       then those will be read and used.  It uses the code page 37 which is
+       default.</p>
+    <p>
+    <code>java -jar my5250.jar parisAS400 -f parisAS400.prop -cp 297</code></p>
+    <p>
+    This will connect to parisAS400 use the property file as described above
+    and use the code page 297 for french.</p>
+    <p>
+    <code>java -jar my5250.jar spainAS400 -f spainAS400.prop -cp 284 -e</code></p>
+    <p>
+        This will connect to spainAS400 use the property file as described above
+        and use the code page 284 for spanish and will notify the as400 that it
+        can send enhanced commands.</p>
+    <note>the -e can be used on all sessions.</note>
+    </section>
+    <section><title>format of the session entries</title>
+    <source>
+       systemName=route-to-host [options as described above]
+    </source>
+    </section>
+    <section><title>Sample sessions file</title>
+    <source>
+luxembourg=lux -f luxgui.prop -e -gui
+lux-nogui=lux -f lux.prop -e
+houilles=houilles -f houilles.prop -cp 297 -e
+paris=paris -f paris.prop -cp 297 -e
+spain=spain -f spain.prop -cp 284 -e
+</source>
+<note>Session names are case sensitive!!!!!!!</note>
+</section>
+
+
+
+  </body>
+</document>

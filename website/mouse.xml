@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Mousebindings</title>
+  </header>
+  <body>
+    <note>English Version</note>
+    <p>
+    Right click on session screen pulls up a menu as follows:</p>
+<source>
+:=====================:
+: Copy                :
+: Paste               :
+: Paste Special       :
+:---------------------:
+: Selected Columns XX :
+: Selected Rows XX    :
+: Sum Area          > :
+:---------------------:
+: Print Screen        :
+:---------------------:
+: System Request      :
+: Help                :
+: Host Print          :
+: Display Messages    :
+:---------------------:
+: Hex Map             :
+: Map Keys...         :
+: Settings...         :
+:---------------------:
+: Macros            > :
+:---------------------:
+: Transfer File...    :
+: Send Screen         :
+:---------------------:
+: Connect/Disconnect  :
+: Close this session  :
+:=====================:
+</source>
+  </body>
+</document>

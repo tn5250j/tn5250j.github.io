@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Applet</title>
+  </header>
+  <body>
+      <p>
+      This version of the emulator includes an applet version of the emulator to be
+      embedded in a webbrowser.</p>
+      <p>
+      Big thanks goes to Bob Fludder at http://www.businessvision.au for testing and
+      helping with this.  He is suppose to write a how to and/or deployment for the
+      applet version of the emulator.</p>
+      <note>
+      Help is needed here with information and or changes to the code to allow a
+      seemless integration.  There are probably bugs in there so please be nice when
+      reporting them ;-)</note>
+    <section><title>Tested Browsers</title>
+    <p>Netscape</p>
+    </section>
+    <section><title>Tested Plugins</title>
+    <ul>
+        <li>1.3.1</li>
+        <li>1.4 beta 3</li>
+    </ul>
+    <p>
+    One thing about the 1.4 beta 3 plugin is that it allows a signed jar to be
+    loaded and the proper authority is prompted for the certificate.  Once accepted
+    the certificate is then saved thus saving the deployment, installation and
+    importing of keys/signatures to each of the desktops.  Very Very nice.</p>
+    </section>
+    <section><title>Deployment</title>
+    <p>
+    There are to applet html files that are included:
+    <ul>
+        <li><code>My5250App.html</code></li>
+        <li><code>My5250AppPlugin.html</code></li>
+    </ul>
+    </p>
+    <p>
+    I am going to have to refer you to the experts at the discussion forum of sun
+    at the following:
+    <link href="http://forum.java.sun.com/thread.jsp?forum=63&amp;thread=174214">
+    http://forum.java.sun.com/thread.jsp?forum=63&amp;thread=174214</link></p>
+    <p>
+    This has the best information on signing and deploying applets.  This being my
+    first applet program I am at a lost for help on deployment for the different
+    browsers and I do not have the time to test them all.</p>
+    <note>
+    Help is needed here with information and or changes to the code to allow a
+    seemless integration.  There are probably bugs in there so please be nice when
+    reporting them ;-)
+    </note>
+    </section>
+    <section><title>Applet Parameters</title>
+    <p>
+    All command line options are supported for applet parameters except for the
+    -f argument for file properties.  Looking for suggestion here!!!!!!!!</p>
+    <p>
+    If you have any questions or suggestions please let me know.  If you have code
+    changes PLEASE PLEASE send them to me.</p>
+    </section>
+  </body>
+</document>

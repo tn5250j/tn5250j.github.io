@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document> 
+  <header> 
+    <title>Proxy Support</title> 
+  </header> 
+  <body> 
+      <p>
+      SOCKS protocol support settings</p>
+      <p>
+      The SOCKS username and password are acquired in the following way.
+      First, if the application has registered a <code>java.net.Authenticator</code> default
+      instance, then this will be queried with the protocol set to the string
+      "SOCKS5", and the prompt set to to the string "SOCKS authentication".
+      If the authenticator does not return a username/password or if no authenticator
+      is registered then the system checks for the user preferences
+      <code>java.net.socks.username</code> and <code>java.net.socks.password</code>.
+      If these preferences do
+      not exist, then the system property "user.name" is checked for a username. In
+      this case, no password is supplied.</p>
+      <p>
+      The previous information is taken from the Java Documentation and is copyrighted
+      by Sun Microsystems.</p>
+      <p>
+      I think I got this correct.  Please see command line option -sph above for
+      example use of username and password.  Let me know if this works.</p>
+
+  </body>
+</document>

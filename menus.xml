@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Menu Options</title>
+  </header>
+  <body>
+  <p>
+Copy - Copies bounded area or if no bounded area selected copies the screen to
+         the clipboard to be pasted
+  </p>
+  <p>Paste - Pastes clipboard data to the screen</p>
+  <p>
+Paste Special - This will paste the data from the clipboard stripping all non
+                  letter and non numeric characters.
+</p>
+<source>
+   Example:
+   --------
+                                 Display Report
+                                              Report width . . . . . :     556
+ Position to line  . . . . .              Shift to column  . . . . . .
+ Line   ....+....1....+....2....+....3....+....4....+....5....+....6....+....7..
+        Opening Branch......  Company Id..........  Application Code....       A
+ 000001         1,091                00069                   D
+ 000002         2,010                00069                   D
+ 000003         2,010                00069                   D
+ 000004         2,010                00069                   D
+ 000005         2,010                00069                   D
+</source>
+   <p>
+   The Opening Branch...... field has a comma within the field, if you do just a
+   regular copy and paste into a field you would get 1,091 which sometimes is
+   not formatted correctly so you would use the paste special and what would be
+   pasted is 1091</p>
+   <p>
+Selected columns and Selected rows - shows the status of the selection.  We use
+            this to count the characters of a selection.  Note these two entries
+            will only show up if there is a bounded area specified.</p>
+<p>
+Sum Area1   This option will only show up if there was a bounded area selected
+            for example copy and paste.
+</p>
+<p>
+            You can select two different formats to parse numbers.  The Grouping
+            separator as ',' and a '.' as Decimal Separator, #,###.## or
+            the grouping seaparator as '.' and a ',' as Decimal Separator,
+            #.###,##  .
+</p>
+<p>Print Screen - Prints the screen</p>
+<p>System Request - Issues a System Request to the AS400 system</p>
+<p>
+Help - NOTE this is not application help but the help key that is sent to the
+         AS400</p>
+<p>
+Host Print - This will send a host print to the AS400 which will print the
+               screen to the users spool</p>
+<p>
+Display Messages - Will only display if there are messages waiting (ie. the
+                     MW light is on).  When the option is selected the messages
+                     will be displayed.  Alt + M will also do this but you can
+                     press this at any time.
+</p>
+<p>Hex Map - Displays a hex map of ASCII characters that can be inserted into the
+            current field</p>
+<p>
+Map Keys - Displays a window to allow remapping of the keys for the emulator</p>
+<p>
+Settings - Displays a window to allow the changing of the font, colors,
+            cursor size and column separator.</p>
+<p>
+Macros - If there are macros defined then this item will be displayed.  It will
+            have a submenu of all macros defined across the sessions.  More
+            information can be found in the macros.txt file.</p>
+<p>
+Transfer file - The user is presented with a screen to fill out the file
+                  information to be downloaded.  More information can be
+                  found in the filetransfers.txt file.</p>
+<p>
+Send Screen - Send screen via e-mail.  More information can be
+                  found in the e-mail.txt file.</p>
+<p>
+Connect/Disconnect - This is a toggle switch.  When connected this entry will
+            read Disconnect and when disconnected this item will read Connect.</p>
+<p>
+Close this session - Will popup a options panel that will allow you to close
+            the current session or all sessions and remove the sessions from
+            the session tab panel.</p>
+<p>
+Left mouse button held down allows you to specify a bounding area.
+</p>
+    <note>English Version</note>
+    <p>
+    Right click on session screen pulls up a menu as follows:</p>
+<source>
+:=====================:
+: Copy                :
+: Paste               :
+: Paste Special       :
+:---------------------:
+: Selected Columns XX :
+: Selected Rows XX    :
+: Sum Area          > :
+:---------------------:
+: Print Screen        :
+:---------------------:
+: System Request      :
+: Help                :
+: Host Print          :
+: Display Messages    :
+:---------------------:
+: Hex Map             :
+: Map Keys...         :
+: Settings...         :
+:---------------------:
+: Macros            > :
+:---------------------:
+: Transfer File...    :
+: Send Screen         :
+:---------------------:
+: Connect/Disconnect  :
+: Close this session  :
+:=====================:
+</source>
+  </body>
+</document>

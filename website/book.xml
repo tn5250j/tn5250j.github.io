@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//APACHE//DTD Cocoon Documentation Book V1.0//EN" "book-cocoon-v10.dtd">
+
+<book software="tn5250j"
+      title="TN5250j"
+      copyright="@year@ K J P"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <menu label="About">
+    <menu-item label="Introduction" href="index.html"/>
+    <menu-item label="Features" href="features.html"/>
+    <menu-item label="Screenshots" href="screenshots.html"/>
+    <menu-item label="Download" href="http://sourceforge.net/project/showfiles.php?group_id=22923"/>
+    <menu-item label="Mailing Lists" href="http://sourceforge.net/mail/?group_id=22923"/>
+    <menu-item label="Acknowledgements" href="acks.html"/>
+  </menu>
+
+  <menu label="User Docs">
+    <menu-item label="Installing" href="install.html"/>
+    <menu-item label="Quick Start" href="quick.html"/>
+    <menu-item label="Keybindings" href="keys.html"/>
+    <menu-item label="Mousebindings" href="mouse.html"/>
+    <menu-item label="Menu Options" href="menus.html"/>
+    <menu-item label="Tested Operating systems" href="tested.html"/>
+    <menu-item label="Applet" href="applet.html"/>
+    <menu-item label="E-Mail" href="email.html"/>
+    <menu-item label="File Transfers" href="filetrans.html"/>
+    <menu-item label="Macros" href="macros.html"/>
+    <menu-item label="Proxy Support" href="proxy.html"/>
+  </menu>
+
+  <menu label="Developer Docs">
+    <menu-item label="Building with Ant" href="building.html"/>
+    <menu-item label="CVS Repository" href="http://sourceforge.net/cvs/?group_id=22923"/>
+  </menu>
+
+</book>
+
+
+
+
+
