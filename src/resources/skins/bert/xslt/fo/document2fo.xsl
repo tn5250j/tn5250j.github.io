@@ -460,8 +460,12 @@
   </xsl:template>
 
   <xsl:template match="figure">
-    <!-- FIXME: Images are not found at the moment -->
-    <fo:external-graphic src="{@src}"/>
+    <fo:external-graphic src="./resources/{@src}"/>
+    <!-- alt text and credits need inserting -->
+  </xsl:template>
+
+  <xsl:template match="img">
+    <fo:external-graphic src="./resources/{@src}"/>
     <!-- alt text and credits need inserting -->
   </xsl:template>
 

@@ -11,27 +11,27 @@
       <fo:layout-master-set>
 
         <fo:simple-page-master master-name="first-page"
-          page-height="11in" 
+          page-height="11in"
           page-width="8.5in"
-          margin-top="1in" 
-          margin-bottom="1in" 
-          margin-left="1.25in" 
+          margin-top="1in"
+          margin-bottom="1in"
+          margin-left="1.25in"
           margin-right="1in">
           <fo:region-body
             margin-top="0.5in"
             margin-bottom=".5in"/>
-          <fo:region-after 
+          <fo:region-after
             region-name="first-footer"
             extent=".5in"
             display-align="before"/>
         </fo:simple-page-master>
 
         <fo:simple-page-master master-name="even-page"
-          page-height="11in" 
+          page-height="11in"
           page-width="8.5in"
-          margin-top="1in" 
-          margin-bottom="1in" 
-          margin-left="1.25in" 
+          margin-top="1in"
+          margin-bottom="1in"
+          margin-left="1.25in"
           margin-right="1in">
           <fo:region-before
             region-name="even-header"
@@ -40,18 +40,18 @@
           <fo:region-body
             margin-top="0.5in"
             margin-bottom=".5in"/>
-          <fo:region-after 
+          <fo:region-after
             region-name="even-footer"
             extent=".5in"
             display-align="before"/>
         </fo:simple-page-master>
 
         <fo:simple-page-master master-name="odd-page"
-          page-height="11in" 
+          page-height="11in"
           page-width="8.5in"
-          margin-top="1in" 
-          margin-bottom="1in" 
-          margin-left="1.25in" 
+          margin-top="1in"
+          margin-bottom="1in"
+          margin-left="1.25in"
           margin-right="1in">
           <fo:region-before
             region-name="odd-header"
@@ -60,7 +60,7 @@
           <fo:region-body
             margin-top="0.5in"
             margin-bottom=".5in"/>
-          <fo:region-after 
+          <fo:region-after
             region-name="odd-footer"
             extent=".5in"
             display-align="before"/>
@@ -80,17 +80,17 @@
           </fo:repeatable-page-master-alternatives>
         </fo:page-sequence-master>
       </fo:layout-master-set>
-      
+
       <fo:page-sequence master-reference="book">
         <xsl:apply-templates/>
       </fo:page-sequence>
-      
+
     </fo:root>
   </xsl:template>
-  
+
   <xsl:template match="document">
     <fo:title><xsl:value-of select="header/title"/></fo:title>
-    
+
     <fo:static-content flow-name="first-footer">
       <fo:block
         border-top="0.25pt solid"
@@ -132,7 +132,7 @@
         <xsl:value-of select="header/title"/>
       </fo:block>
     </fo:static-content>
-    
+
     <fo:static-content flow-name="odd-footer">
       <fo:block
         border-top="0.25pt solid"
@@ -154,7 +154,7 @@
         font-weight="bold">
         <xsl:value-of select="header/title"/>
       </fo:block>
-      
+
       <fo:block
         text-align="justify"
         padding-before="18pt"
@@ -163,7 +163,7 @@
       </fo:block>
     </fo:flow>
   </xsl:template>
-  
+
   <xsl:template match="abstract">
     <fo:block
       font-size="12pt"
@@ -176,7 +176,7 @@
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
-  
+
   <xsl:template match="notice">
     <fo:block
       font-size="10pt"
@@ -193,10 +193,10 @@
   </xsl:template>
 
   <xsl:template match="section">
-    
+
     <xsl:param name="level">0</xsl:param>
     <xsl:variable name="size" select="16-(number($level)*2)"/>
-    
+
     <fo:block
       font-family="serif"
       font-size="{$size}pt"
@@ -209,13 +209,13 @@
     <xsl:apply-templates>
       <xsl:with-param name="level" select="number($level)+1"/>
     </xsl:apply-templates>
-    
+
   </xsl:template>
-  
+
   <xsl:template match="title">
     <!-- do nothing as titles are handled in their parent templates -->
   </xsl:template>
-  
+
   <xsl:template match="subtitle">
     <xsl:param name="level">0</xsl:param>
     <xsl:variable name="size" select="16-(number($level)*1.5)"/>
@@ -460,14 +460,18 @@
   </xsl:template>
 
   <xsl:template match="figure">
-    <!-- FIXME: Images are not found at the moment -->
-    <fo:external-graphic src="{@src}"/>
+    <fo:external-graphic src="./resources/{@src}"/>
+    <!-- alt text and credits need inserting -->
+  </xsl:template>
+
+  <xsl:template match="img">
+    <fo:external-graphic src="./resources/{@src}"/>
     <!-- alt text and credits need inserting -->
   </xsl:template>
 
   <xsl:template match="table">
     <!-- FIXME: Apache FOP must have column widths specified at present,
-         this section can be removed when this limitation is removed from Fop. 
+         this section can be removed when this limitation is removed from Fop.
          Unfortunately, this means that each column is a fixed width,
          but at least the table displays! -->
 
@@ -486,7 +490,7 @@
     </xsl:variable>
 
     <fo:table>
-                  
+
       <fo:table-column>
         <xsl:attribute name="column-width">
           <xsl:value-of select="$column-width"/>
@@ -497,7 +501,7 @@
         </xsl:attribute>
       </fo:table-column>
 
-      <!-- End of hack for Fop support (if removing this hack, remember 
+      <!-- End of hack for Fop support (if removing this hack, remember
            you need the <fo:table> element) -->
 
       <fo:table-body
