@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Developer Documentation Links</title>
+  </header>
+  <body>
+    <p>
+    I originally started this project using the documentation I found from the
+    <link href="http://tn5250.sourceforge.net/resources.html">Linux 5250</link> 
+    project resources page.  The full list is there.
+    </p>
+    <p>
+    I have reproduced some of the documents here.
+    </p>
+    
+    <section><title>RFC Documents</title>
+        
+        <link href="http://www.ietf.org/html.charters/tn3270e-charter.html">Internet Engineering Task Force - IETF </link>
+
+            <table>
+                <caption>RFCs online</caption>
+                <tr><th>RFC</th><th>Description</th></tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc854.html">RFC 854</link></td>
+                    <td>Telnet Protocol Specification</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc855.html">RFC 855</link></td>
+                    <td>Telnet Option Specifications</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc856.html">RFC 856</link></td>
+                    <td>Telnet Binary Transmission</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc860.html">RFC 860</link></td>
+                    <td>Telnet Timing Mark Option</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc885.html">RFC 885</link></td>
+                    <td>Telnet End Of Record Option</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc1091.html">RFC 1091</link></td>
+                    <td>Telnet Terminal-Type Option</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc1205.html">RFC 1205</link></td>
+                    <td>5250 Telnet Interface</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc1572.html">RFC 1572</link></td>
+                    <td>Telnet Environment Option</td>
+                </tr>
+                <tr>
+                    <td><link href="http://www.faqs.org/rfcs/rfc2877.html">RFC 2877</link></td>
+                    <td>5250 Telnet Enhancements. This standard extends RFC 1205 and includes a useful list of references in section 13.</td>
+                </tr>
+            </table>
+    </section>
+
+    <section><title>Available IBM Manuals online</title>
+
+            <table>
+                <caption>Available IBM Manuals online</caption>
+                <tr><th>IBM Document</th><th>Description</th></tr>
+                <tr>
+                    <td><link href="http://publib.boulder.ibm.com/cgi-bin/bookmgr/BOOKS/CO2E2001/CCONTENTS">SC30-3533-03</link></td>
+                    <td>5494 Remote Control Unit, Functions Reference</td>
+                </tr>
+                <tr>
+                    <td><link href="http://publib.boulder.ibm.com/cgi-bin/bookmgr/BOOKS/QB3ANB00/CCONTENTS">SC41-5401-00</link></td>
+                    <td>OS/400 Communications Configuration V4R1. Chapter 8 defines the parameters that may be passed to the AS/400 over the telnet connection to configure the display or printer device.</td>
+                </tr>
+            </table>
+    </section>
+  </body>
+</document>

@@ -36,6 +36,7 @@
   <menu label="Developer Docs">
     <menu-item label="Building with Ant" href="building.html"/>
     <menu-item label="CVS Repository" href="http://sourceforge.net/cvs/?group_id=22923"/>
+    <menu-item label="Documentation Links" href="devdocs.html"/>
   </menu>
 
 </book>
