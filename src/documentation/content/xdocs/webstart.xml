@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Webstart</title>
+  </header>
+  <body>
+   <section><title>Deployment with JavaWebStart</title>
+   <p>
+   Using the webstart application the clients are automatically set up for use any
+   any changes are automatically downloaded and ready for use.</p>
+   <p>
+   I also have scripts and or .bat set up to do the signing and copying to the
+   intranet.</p>
+   <p>
+   I have included my sample .jnlp file that I use for deploying in JavaWebStart.</p>
+   <source><![CDATA[
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for tn5250j Application -->
+<jnlp
+       spec="0.2 1.0"
+       codebase="http://xxx.xxx.xxx.xxx:8080/products/javawebstart/apps"
+       href="tn5250j.jnlp">
+<information>
+<title>tn5250j</title>
+<vendor>Kenneth J. Pouncey</vendor>
+<homepage href="http://sourceforge.net/tn5250j"/>
+<description>tn5250j - 5250 emulator written in java</description>
+<description kind="short">tn5250j - 5250 emulator</description>
+<icon href="tnicon.jpg"/>
+<offline-allowed/>
+</information>
+<security>
+<all-permissions/>
+</security>
+<resources>
+<j2se version="1.3+" inital-heap-size="64m" max-heap-size="256m"/>
+<jar href="tn5250j.jar" main="true" download="eager"/>
+<jar href="activation.jar"/>
+<jar href="mail.jar"/>
+<jar href="mailapi.jar"/>
+<jar href="smtp.jar"/>
+</resources>
+<application-desc main-class="org.tn5250j.My5250"/>
+</jnlp>
+]]>
+  </source>
+  <p>
+  All these files are signed before coping to server.</p>
+  <p>
+  For instructions on Setting up and Using Java webstart please consult the
+  experts website.</p>
+  </section>
+  </body>
+</document>

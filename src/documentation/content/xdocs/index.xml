@@ -11,13 +11,12 @@
       I started it because I could not find a terminal emulator for Linux with features
       like continued edit fields, gui windows, cursor progression fields etc....</p>
       <p>
-      From there it has seemed to go off in all sorts of directions. Now there are 3 modes.
+      From there it has seemed to go off in all sorts of directions. Now there are 3 modes.</p>
       <ul>
           <li>A basic mode that most emulators I have found are.</li>
           <li>Enhanced mode that implements the features that I wanted like masked edit fields and those listed above.</li>
           <li>The third is a gui mode that turns the bland green-screen into a windows gui (See screen shots).</li>
       </ul>
-      </p>
     </section>
     <section>
       <title>Why tn5250j</title>
@@ -47,12 +46,13 @@
       is slower but I get to add functionality at my whim.</p>
       <p>
       In my humble opinion, one of the things holding Linux back in AS400 departments
-      is that there are no emulators with some of these enhanced functions available.
+      is that there are no emulators with some of these enhanced functions available.</p>
       <note>
       If there are emulators for Linux with these features at a reasonable
       price please let me know and I will change my opinion here. I am not an expert
       on emulators nor the 5250 data stream so I could be wrong. I am doing this for
       the learning experience not to replace or keep up with others!!!</note>
+      <p>
       If along the
       way someone else likes this project and finds it useful then I think it is great.
       We use a lot of the enhanced functions (like cursor progression, continued edit

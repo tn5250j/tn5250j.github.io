@@ -3,7 +3,6 @@
 <document>
   <header>
     <title>Quick Start</title>
-    <authors><person email="" name="Christian Geisert"/></authors>
   </header>
   <body>
     <p>
@@ -113,7 +112,8 @@
 
                Example command line:
                =====================
-               java -Djava.net.socks.username="kjp1" -Djava.net.socks.password="tn5250j" -jar tn5250j.jar
+               java -Djava.net.socks.username="kjp1" -Djava.net.socks.password="tn5250j"
+               -jar tn5250j.jar
 
                I have not tried this so please let me know if it works.
 

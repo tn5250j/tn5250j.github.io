@@ -24,20 +24,7 @@
 		</xsl:otherwise>
 	</xsl:choose>
       <body>
-        <xsl:apply-templates/>
-         <xsl:if test="/document/header/authors">
-            <div id="authors">       
-               <xsl:for-each select="/document/header/authors/person">
-                     <xsl:choose>
-                        <xsl:when test="position()=1">by&#160;</xsl:when>
-
-                        <xsl:otherwise>,&#160;</xsl:otherwise>
-                     </xsl:choose>
-
-                     <xsl:value-of select="@name" />
-                  </xsl:for-each>
-              </div>
-         </xsl:if>
+         <xsl:apply-templates/>
 
       </body>
       </document>
@@ -61,6 +48,13 @@
 <!-- ====================================================================== -->
 
     <xsl:template match="body">
+    <table align="right"><tr>
+    <td align="center" alt="PDF" nowrap="nowrap">
+      <a href="{$resource}.pdf" id="pdf"><img border="0"
+      src="skin/images/pdf.gif"/><br/>
+              PDF version</a></td>
+    </tr></table>
+
     <xsl:if test="section and not($isfaq='true')">
       <ul class="minitoc">
         <xsl:for-each select="section">
@@ -83,14 +77,21 @@
         </xsl:for-each>
       </ul>
     </xsl:if>
-<!--
-    <table><tr>
-    <td align="center" width="80" nowrap="nowrap">
-      <a href="{$resource}.pdf" class="dida"><img border="0"
-      src="skin/images/printer.gif"/><br/>
-              PDF version</a></td>
-    </tr></table>
--->
+
+         <xsl:if test="/document/header/authors">
+            <div id="authors">       
+               <xsl:for-each select="/document/header/authors/person">
+                     <xsl:choose>
+                        <xsl:when test="position()=1">by&#160;</xsl:when>
+
+                        <xsl:otherwise>,&#160;</xsl:otherwise>
+                     </xsl:choose>
+
+                     <xsl:value-of select="@name" />
+                  </xsl:for-each>
+              </div>
+         </xsl:if>
+
     
     <xsl:apply-templates/>
   </xsl:template>
@@ -274,7 +275,14 @@
  </xsl:template>
  
  <xsl:template match="img">
+  <xsl:choose>
+   <xsl:when test="string(@width) and string(@height)">
+   <img src="{@src}" alt="{@alt}" width="{@width}" height="{@height}"/>
+   </xsl:when>
+   <xsl:otherwise>
    <img src="{@src}" alt="{@alt}"/>
+   </xsl:otherwise>
+  </xsl:choose>
  </xsl:template>
 
  <xsl:template match="icon">

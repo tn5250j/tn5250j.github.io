@@ -7,13 +7,25 @@
  </header>
  <body>
    <!--1152x864-->
-   <p>Work With Objects</p>
-   <figure alt="" src="images/wrkobj_gui_french.jpg" width="230" height="172"/>
-   <p>Query Enhanced</p>
-   <figure alt="" src="images/query_lux_enhanced.jpg" width="230" height="172"/>
-   <p>Query GUI</p>
-   <figure alt="" src="images/qry_lux_gui.jpg" width="230" height="172"/>
-   <p>Work With Objects</p>
-   <figure alt="" src="images/popupmenu.jpg" width="230" height="172"/>
+   <section><title>Work With Objects</title>
+   <p><jump href="images/wrkobj_gui_french.jpg">
+   <img alt="" src="images/wrkobj_gui_french.jpg" width="230" height="172"/>
+   </jump></p>
+   </section>
+   <section><title>Query Enhanced</title>
+   <p><jump href="images/query_lux_enhanced.jpg">
+   <img alt="" src="images/query_lux_enhanced.jpg" width="230" height="172"/>
+   </jump></p>
+   </section>
+   <section><title>Query GUI</title>
+   <p><jump href="images/qry_lux_gui.jpg">
+   <img alt="" src="images/qry_lux_gui.jpg" width="230" height="172"/>
+   </jump></p>
+   </section>
+   <section><title>Popup menu</title>
+   <p><jump href="images/popupmenu.jpg">
+   <img alt="" src="images/popupmenu.jpg" width="230" height="172"/>
+   </jump></p>
+   </section>
    </body>
 </document>

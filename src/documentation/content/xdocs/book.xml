@@ -30,6 +30,7 @@
     <menu-item label="File Transfers" href="filetrans.html"/>
     <menu-item label="Macros" href="macros.html"/>
     <menu-item label="Proxy Support" href="proxy.html"/>
+    <menu-item label="Webstart" href="webstart.html"/>
     <menu-item label="Scripting" href="scripting.html"/>
   </menu>
 

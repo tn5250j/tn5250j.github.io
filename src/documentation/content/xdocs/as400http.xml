@@ -3,15 +3,9 @@
 <document>
   <header>
     <title>Serving tn5250j in Web Documents from the HTTP Server for iSeries</title>
+    <authors><person email="" name="Bill (toeside) Middleton"/></authors>
   </header>
   <body>
-
-  <section><title>Written by</title>
-    <p>
-        Bill (toeside) Middleton
-    </p>
-
-  </section>
 
   <section><title>Introduction</title>
 
