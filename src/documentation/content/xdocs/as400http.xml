@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Serving tn5250j in Web Documents from the HTTP Server for iSeries</title>
+  </header>
+  <body>
+
+  <section><title>Written by</title>
+    <p>
+        Bill (toeside) Middleton
+    </p>
+
+  </section>
+
+  <section><title>Introduction</title>
+
+  <p>
+The iSeries (AS/400) operating system OS/400, as part of its TCP/IP
+application suite, includes a built-in web server called the
+HTTP Server for iSeries.  By configuring and starting an instance
+of this server, one can serve HTML documents that allow users
+to run a display sessions from browser windows.
+</p>
+<p>
+This function is particularly useful in situations where it is not
+practical to deploy a connectivity product like Client Access Express.
+</p>
+<p>
+For example, if you're an iSeries administrator, developer or power
+user who roams far and wide in the course of your activity, there's
+a certain comfort in knowing that with just a browser and some kind
+of network access, you can get a green-screen session going to the
+host. tn5250j's ability to run as a Java applet is the key.
+</p>
+
+</section>
+
+  <section><title>Prerequisites</title>
+    <p>
+Setting up the HTTP Server is an administrative task that requires
+*IOSYSCFG special authority.  If you don't have this authority,
+you will need to work closely with an administrator who does.
+</p>
+<p>
+You will also need the following:
+</p>
+
+
+    <ol>
+        <li>
+A workstation with a Java-enabled web broswer that has TCP/IP
+network access to the host AS/400.  This is also required for any
+client computer that will be using the tn5250j applet.
+        </li>
+        <li>
+A general understanding of the Integrated File System (IFS) and how
+it provides the Unix-like directory and file naming convention to
+OS/400 data resources.  The File Systems and Management topic on IBM's
+iSeries Information Center web site explores covers this in more detail:
+<p>
+http://publib.boulder.ibm.com/pubs/html/as400/v4r5/ic2924/info/rzaiaifsover.htm
+</p>
+<p>
+To begin exploring the IFS from the OS/400 command line, enter the
+command GO FILESYS.
+</p>
+        </li>
+        <li>
+- A method to copy the tn5250j application, HTML, and other "stream"
+files to the IFS.  This can be done using FTP or via a network drive
+mapped to an IFS directory.
+    <p>
+To use FTP, the host must have the FTP server active.  Use command
+STRTCPSVR SERVER(*FTP) to start it.  In order for FTP client to reach
+the IFS root and its subdirectories, "name format 1" must be used.
+The FTP server can be set to use this format via this command:
+CHGFTPA NAMEFMT(*PATH).  Alternatively, the FTP client can toggle
+the name format using the FTP subcommand 'na 1'.  See this link for
+more information on FTP:
+    </p>
+    <p>
+http://publib.boulder.ibm.com/pubs/html/as400/v4r5/ic2924/info/RZAIQRZAIRQGETSTART.HTM
+    </p>
+    <p>
+To map network drives, the desktop OS must have a set of
+SMB (system message block / Microsoft Networking) protocol drivers
+installed.  For Windows desktops, these are installed when TCP/IP
+and the Client for Microsoft Networks are configured in Network.
+    </p>
+    <p>
+On the host system, the AS/400 NetServer must be started.  Use
+command STRTCPSVR SERVER(*NETSVR) to start it. See this link for
+more information on NetServer:
+    </p>
+    <p>
+http://publib.boulder.ibm.com/pubs/html/as400/v4r5/ic2924/info/RZAIINETSERVERADM.HTM
+    </p>
+    <p>
+Note to Windows 95/98/Me users: To successfully map a network drive
+into the IFS, the user ID used for your Windows logon *must* match
+your AS/400 user profile.  To be seamless, the passwords should
+match also.
+    </p>
+        </li>
+        <li>
+- (optional) A Windows workstation with the IBM Client Access Express
+Operations Navigator administrative tool installed. OpNav provides a
+consolidated GUI interface for administering the iSeries. All
+of the host admin tasks required in this guide can be done
+point-and-click style with OpNav rather than using display session
+commands. This guide, however, does *not* include task step instuctions
+using OpNav.  For more information on Operations Navigator:
+    <p>
+
+http://publib.boulder.ibm.com/pubs/html/as400/v4r5/ic2924/info/rzahgicopnav.htm
+    </p>
+        </li>
+      </ol>
+   </section>
+
+  <section><title>Creating Directories</title>
+
+    <p>
+You will need a directory structure in the IFS to house tn5250j and
+the HTML documents you plan to serve.  Users will also need at least
+read access to the directories and/or the files contained there.
+    </p>
+    <p>
+Say for example, you would like to create the following directory
+hierarchy:
+    </p>
+    <source>
+MyStuff ---+--- ftp  ---+
+           |
+           |
+           |
+           +--- java ---+
+           |            |
+           |            +--- tn5250j
+           |
+           +--- www  ---+
+                        |
+                        +--- images
+
+    </source>
+    <p>
+The 'MyStuff' directory would be secure from public access, but
+public read access would be allowed to 'ftp', 'java', 'www' and
+their subdirectories.  The structure can be created with this
+set of OS/400 commands:
+    </p>
+    <source>
+CRTDIR DIR('MyStuff') DTAAUT(*EXCLUDE) OBJAUT(*NONE)
+CRTDIR DIR('MyStuff/ftp') DTAAUT(*RX) OBJAUT(*OBJREF)
+CRTDIR DIR('MyStuff/java') DTAAUT(*RX) OBJAUT(*OBJREF)
+CRTDIR DIR('MyStuff/www') DTAAUT(*RX) OBJAUT(*OBJREF)
+CRTDIR DIR('MyStuff/java/tn5250j')
+CRTDIR DIR('MyStuff/www/images')
+    </source>
+    <p>
+Once these directories are created, they can be subsequently
+managed using Work with Object Links.  Enter this command to
+start:
+    </p>
+    <source>
+WRKLNK
+    </source>
+    <p>
+The above can also be accomplished (more or less) using your
+FTP client, Operations Navigator, Window Explorer or your desktop
+OS file and directory management function (with network drive
+mapping.)
+    </p>
+
+    </section>
+
+  <section><title>Copy tn5250j to the IFS</title>
+    <p>
+You will need to place the tn5250j application files into the
+into the directory from which it will be served by the HTTP
+Server.  In our example, these files (tn5250j.jar, etc.)
+will be copied/uploaded to '/MyStuff/java/tn5250j'.
+    </p>
+    <p>
+Use your FTP client or desktop file management function
+to copy the files.
+    </p>
+    </section>
+
+  <section><title>Create an HTML Document</title>
+    <p>
+Using your favorite text editor, create a text document with
+an 'htm' or 'html' extension that contains the <source><![CDATA[<APPLET>]]></source>
+tags needed to load tn5250j into the client's browser window.
+    </p>
+    <p>
+Here's a simple example:
+    </p>
+    <source><![CDATA[
+<HTML>
+<HEAD>
+<TITLE>AS/400 Display Session</TITLE>
+</HEAD>
+<BODY>
+<H2>AS/400 Display Session</H2>
+    ]]></source>
+<p>
+The below Telnet 5250 session is made possible by
+<b><a href="http://sourceforge.net/projects/tn5250j/">tn5250j</a></b>,
+an open-source Java application.
+</p>
+
+<p>
+If all you see is a grey box, it may be because Microsoft
+took away automatic support for Java in your browser.  Click
+<a href="http://java.sun.com/j2se/1.4/download.html">here</a>
+to get Sun's Java Runtime Edition (JRE).  Install it, then restart
+Internet Explorer.
+</p>
+    <source><![CDATA[
+<APPLET
+  CODEBASE = "/java/tn5250j"
+  CODE     = "org.tn5250j.My5250App.class"
+  NAME     = "tn5250j - Java Telnet 5250 Client "
+  ALT      = "tn5250j cannot start. Browser may not support Java."
+  WIDTH    = 600
+  HEIGHT   = 400
+  HSPACE   = 0
+  VSPACE   = 0
+  ALIGN    = top
+  ARCHIVE  = "tn5250j.jar"
+>
+<PARAM NAME ="host" VALUE= "192.168.50.1">
+<PARAM NAME ="-e" VALUE= " ">
+</APPLET>
+
+</BODY>
+</HTML>
+    ]]></source>
+    <p>
+You may notice that the CODEBASE parameter value seems to be
+incorrect for our example, however our HTTP server configuration
+will route the request to the 'MyStuff' directory correctly.
+    </p>
+    <p>
+Also, should modify the host address value to be the IP address
+or host name of your AS/400.  The IP address for your host system
+can be determined by entering the CFGTCP command, then selecting
+option 1, "Work with TCP/IP interfaces".
+    </p>
+    <p>
+Save or upload your document into the IFS directory from which
+it will be served.  For our example, this is
+'/MyStuff/www/AS400Applet.htm'
+    </p>
+
+    </section>
+
+  <section><title>Configuring the HTTP Server</title>
+
+
+    <note>
+Depending on where you're looking, IBM calls this server
+the "HTTP Server for iSeries", the "IBM HTTP Server for AS/400",
+and the "HTTP Server (original)". It's all the same.  From
+OS/400 version 5 release 1 and forward, there is also the
+"HTTP Server (powered by Apache)". That is a different product
+and is not covered here.
+    <p>
+As an adjunct to this section, view the "Getting Started with HTTP
+Server" topic found at this URL:
+    </p>
+    <p>
+http://publib.boulder.ibm.com/pubs/html/as400/v4r5/ic2924/info/RZAIEGET.HTM
+    </p>
+    </note>
+
+    <p>
+This task requires starting the ADMIN instance of the HTTP Server,
+then using your web browser to set up a custom configuration. This
+configuration is later used to start an instance of the server
+that serves your tn5250j applet document.
+    </p>
+    <p>
+1) Start the ADMIN server instance by entering the command:
+    </p>
+    <source>
+   STRTCPSVR SERVER(*HTTP) HTTPSVR(*ADMIN)
+    </source>
+    <p>
+2) The ADMIN server listens on port 2001, so point your browser to a URL
+   like this, substituting the correct IP or host:
+    </p>
+    <source>
+   http://192.168.50.1:2001/
+    </source>
+    <p>
+3) Follow the "IBM HTTP Server for AS/400" hyperlink.
+    </p>
+    <p>
+4) Select the "Configuration and Administration" link.
+    </p>
+    <p>
+5) Expand the "Configurations" selection, then choose the "Create
+   configuration" option.  Type a name for a new configuration. For
+   this example we'll use 'TN5250J'.  Choose the "Create based on
+   existing configuration: CONFIG" radio button.  Click the "Apply"
+   button.  You should receive confirmation that the configuration
+   profile was created.
+    </p>
+    <p>
+6) Ensure the 'TN5250J' configuration is selected in the drop-down list
+   under "Configurations" in the lefthand frame.  Select "Basic". If
+   you want your server to listen on a specific port (the way ADMIN
+   listens on 2001), enter that port number for the "Default port".
+   If you leave it blank it will listen on the default HTTP port of
+   80.  For our example, we'll leave the default (blank).
+    </p>
+    <p>
+   If so inclined, you can update other options on this page.
+   Help for the page is provided by clicking the small '?' box in
+   the upper right corner of the frame.  When done, click the "Apply"
+   button.
+    </p>
+    <p>
+7) Expand the "Directories and Welcome Page" selection, then choose
+   "Welcome Page".  Edit the list so that index 1 is a home page
+   HTML document.  It could be 'Welcome.html' or 'index.html' or
+   even 'AS400Applet.htm'.  For our example we'll set it as the
+   latter.  You'll likely leave the "Server IP address or host name"
+   option blank. Set the "Directory list viewing" options as you see
+   fit. Click the "Apply" button.
+    </p>
+    <p>
+8) Expand the "Request Processing" selection, then choose "Request
+   routing".  Use the dialog in the righthand frame to set up routing
+   directives.  For our example, we'll add these 4 "Pass" directives:
+    </p>
+    <source>
+   Index  Action  URL template  Replacement file path
+   -----  ------  ------------  ---------------------
+     1     Pass    /            /MyStuff/www/AS400Applet.htm
+     2     Pass    /ftp/*       /MyStuff/ftp/*
+     3     Pass    /java/*      /MyStuff/java/*
+     4     Pass    /*           /MyStuff/www/*
+    </source>
+
+    <note>
+   Note that if you had chosen a home page named 'index.html' and
+   used it in  the first directive's file path, a hyperlink from
+   the home page to 'AS400Applet.htm' would be located because of
+   directive #4.
+    </note>
+    <p>
+   Once the list is set up, click the "Apply" button.
+    </p>
+    <p>
+9) Expand the "Server Instances" selection, then choose "Create
+   server instance".  For "Server instance:", type a name to use
+   when starting your custom server instance.  For the example
+   we'll use 'MY5250'.  From the drop-down list, select the configuration
+   name from step 5, such as 'TN5250J'.  Click the "Create" button.
+   A confirmation message is issued.
+    </p>
+    <p>
+
+The configuration is now complete.  You are now ready to start your new
+server instance.
+    </p>
+    </section>
+
+  <section><title>Starting and Testing the Server Instance</title>
+
+    <p>
+One method to start your server is to continue from ADMIN pages used
+in the above section:
+    </p>
+    <p>
+From the expanded "Server Instances" selection in the lefthand frame,
+choose "Work with server instances".  Select your instance name from
+step 9 above, e.g. 'MY5250', then click the "Start" button.  Obviously
+you may use this same page to stop or restart it.
+    </p>
+    <p>
+A second method is from the green screen command line using this command:
+    </p>
+    <source>
+STRTCPSVR SERVER(*HTTP) HTTPSVR(MY5250)
+    </source>
+    <p>
+Once the server instance starts, point your browser to your host system
+using a URL like this:
+    </p>
+    <source>
+http://192.168.50.1/
+    </source>
+    <p>
+Or, let's say you use a host name of SYSTEM1 (as opposed to a straight
+IP address) and that in step 6 above you used a non-standard port
+of '2345'.  You would use this for your browser's address:
+    </p>
+    <source>
+http://SYSTEM1:2345/
+    </source>
+    <p>
+The AS/400 will now send your browser a login request.  Enter your
+AS/400 user ID and password.
+    </p>
+    <p>
+At this point, your browser should render all (or most) of your home
+page.  If it includes the tn5250j applet, it will initialize and attempt
+to open a telnet connection back to the host.  You may receive a second
+login dialog.  Complete this with your AS/400 user ID and password.
+tn5250j will now start the telnet session and display it on the page.
+    </p>
+
+    </section>
+
+                                <strong>###</strong>
+  </body>
+</document>
+
+
+
+
+
+

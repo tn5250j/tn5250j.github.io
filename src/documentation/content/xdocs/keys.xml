@@ -1,73 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
-<document> 
-  <header> 
-    <title>Keybindings</title> 
-  </header> 
-  <body> 
+<document>
+  <header>
+    <title>Keybindings</title>
+  </header>
+  <body>
     <p>
     These are the default key bindings.  You can remap these by clicking on the
     map keys from the popup menu.</p>
-<source>
-F1         PF1
-F2         PF2
-F3         PF3
-F4         PF4
-F5         PF5
-F6         PF6
-F7         PF7
-F8         PF8
-F9         PF9
-F10        PF10
-F11        PF11
-F12        PF12
-Shift + F1   PF13
-Shift + F2   PF14
-Shift + F3   PF15
-Shift + F4   PF16
-Shift + F5   PF17
-Shift + F6   PF18
-Shift + F7   PF19
-Shift + F8   PF20
-Shift + F9   PF21
-Shift + F10   PF22
-Shift + F11   PF23
-Shift + F12   PF24
-Enter		      Field Exit
-Ctrl		      Enter (note this includes both left and right control keys)
-Shift + Esc	   System Request
-Alt + -> Next Word
-Alt + &lt;-	      Prev Word
-Alt + x		   Connect/Diconnect toggle
-Alt + l		   Toggle ruler line vertical line, horizontal line, cross hair
-Alt + r		   Reset
-Alt + F1 	   Help
-Alt + p		   Print Screen
-Alt + h		   Host Print
-Alt + d		   Display Attributes
-Alt + c		   Copy
-Alt + v		   Paste
-Alt + m		   Display messages
-Alt + n		   New Session
-Alt + q		   Close session and remove from session tab panel
-Alt + s		   Toggle Hotspots on and off
-Alt + g		   Toggle GUI Interface on and off
-Alt + t		   Transfer File
-Insert		   Toggle insert mode (cursor changes shape to half height cursor)
-                  Right shift of field characters in insert mode
-Delete		   Delete character (with left shift of field characters)
-BackSpace	   Delete Previous Character (with left shift of field characters)
-Keypad plus	   Field Positive Key (works like field exit in non numeric fields)
-Keypad minus	Field Minus Key
-Tab		      Next Field
-Shift + Tab	   Prev Field
-Home		      Home position
-End		      End of field
-Alt + PageUp	Next Session
-Alt + PageDn	Previous Session
+      <table>
+      <caption>Key Bindings</caption>
+      <tr><th>Key Stroke</th><th>Description</th></tr>
+      <tr><td>F1</td><td>         PF1</td></tr>
+<tr><td>F2</td><td>         PF2</td></tr>
+<tr><td>F3</td><td>         PF3</td></tr>
+<tr><td>F4</td><td>         PF4</td></tr>
+<tr><td>F5</td><td>         PF5</td></tr>
+<tr><td>F6</td><td>         PF6</td></tr>
+<tr><td>F7</td><td>         PF7</td></tr>
+<tr><td>F8</td><td>         PF8</td></tr>
+<tr><td>F9</td><td>         PF9</td></tr>
+<tr><td>F10</td><td>        PF10</td></tr>
+<tr><td>F11 </td><td>       PF11</td></tr>
+<tr><td>F12 </td><td>       PF12</td></tr>
+<tr><td>Shift + F1</td><td>   PF13</td></tr>
+<tr><td>Shift + F2 </td><td>  PF14</td></tr>
+<tr><td>Shift + F3 </td><td>  PF15</td></tr>
+<tr><td>Shift + F4</td><td>   PF16</td></tr>
+<tr><td>Shift + F5</td><td>   PF17</td></tr>
+<tr><td>Shift + F6</td><td>   PF18</td></tr>
+<tr><td>Shift + F7</td><td>   PF19</td></tr>
+<tr><td>Shift + F8 </td><td>  PF20</td></tr>
+<tr><td>Shift + F9 </td><td>  PF21</td></tr>
+<tr><td>Shift + F10</td><td>   PF22</td></tr>
+<tr><td>Shift + F11</td><td>   PF23</td></tr>
+<tr><td>Shift + F12</td><td>   PF24</td></tr>
+<tr><td>Enter</td><td>		      Field Exit</td></tr>
+<tr><td>Ctrl</td><td>		      Enter (note this includes both left and right control keys)</td></tr>
+<tr><td>Shift + Esc</td><td>	   System Request</td></tr>
+<tr><td>Alt + -> </td><td>Next Word</td></tr>
+<tr><td>Alt + &lt;-	 </td><td>     Prev Word</td></tr>
+<tr><td>Alt + x	</td><td>	   Connect/Diconnect toggle</td></tr>
+<tr><td>Alt + l	</td><td>	   Toggle ruler line vertical line, horizontal line, cross hair</td></tr>
+<tr><td>Alt + r	</td><td>	   Reset</td></tr>
+<tr><td>Alt + F1 </td><td>	   Help</td></tr>
+<tr><td>Alt + p	</td><td>	   Print Screen</td></tr>
+<tr><td>Alt + h	</td><td>	   Host Print</td></tr>
+<tr><td>Alt + d	</td><td>	   Display Attributes</td></tr>
+<tr><td>Alt + c	</td><td>	   Copy</td></tr>
+<tr><td>Alt + v	</td><td>	   Paste</td></tr>
+<tr><td>Alt + m	</td><td>	   Display messages</td></tr>
+<tr><td>Alt + n	</td><td>	   New Session</td></tr>
+<tr><td>Alt + q	</td><td>	   Close session and remove from session tab panel</td></tr>
+<tr><td>Alt + s	</td><td>	   Toggle Hotspots on and off</td></tr>
+<tr><td>Alt + g	</td><td>	   Toggle GUI Interface on and off</td></tr>
+<tr><td>Alt + t	</td><td>	   Transfer File</td></tr>
+<tr><td>Insert	</td><td>	   Toggle insert mode (cursor changes shape to half height cursor)
+                  Right shift of field characters in insert mode</td></tr>
+<tr><td>Delete	</td><td>	   Delete character (with left shift of field characters)</td></tr>
+<tr><td>BackSpace	</td><td>   Delete Previous Character (with left shift of field characters)</td></tr>
+<tr><td>Keypad plus	 </td><td>  Field Positive Key (works like field exit in non numeric fields)</td></tr>
+<tr><td>Keypad minus</td><td>	Field Minus Key</td></tr>
+<tr><td>Tab</td><td>		      Next Field</td></tr>
+<tr><td>Shift + Tab</td><td>	   Prev Field</td></tr>
+<tr><td>Home</td><td>		      Home position</td></tr>
+<tr><td>End	</td><td>	      End of field</td></tr>
+<tr><td>Alt + PageUp</td><td>	Next Session</td></tr>
+<tr><td>Alt + PageDn</td><td>	Previous Session</td></tr>
 
-Alt + O        Debug output mode (see not below)
-</source>
+<tr><td>Alt + O</td><td>        Debug output mode (see not below)</td></tr>
+</table>
 <note> Alt + O (not zero) by itself will turn on debugging mode that I use
 for testing and will probably slow down the session painting because it outputs
 all input data streams to log.txt and to the screen.  I will take this out as

@@ -23,6 +23,7 @@
     <menu-item label="Menu Options" href="menus.html"/>
     <menu-item label="Tested Operating systems" href="tested.html"/>
     <menu-item label="Applet" href="applet.html"/>
+    <menu-item label="AS/400 HTTP Server" href="as400http.html"/>
     <menu-item label="E-Mail" href="email.html"/>
     <menu-item label="File Transfers" href="filetrans.html"/>
     <menu-item label="Macros" href="macros.html"/>
