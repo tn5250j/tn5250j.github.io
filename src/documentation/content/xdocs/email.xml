@@ -13,7 +13,6 @@
           <ul>
             <li>
                 <jump href="http://java.sun.com/products/javamail/">http://java.sun.com/products/javamail/</jump>
-                <!-- link href="http://java.sun.com/products/javamail/">http://java.sun.com/products/javamail/</link -->
             </li>
             <li>
                 <jump href="http://java.sun.com/products/javabeans/glasgow/jaf.html">http://java.sun.com/products/javabeans/glasgow/jaf.html</jump>
@@ -42,33 +41,26 @@
    <section><title>Configure E- mail</title>
 
     <p>
-    <b>Step 1 - Start E-Mail by hitting the Alt-E or selecting from popup menu</b>
+    <strong>Step 1 - Start E-Mail by hitting the Alt-E or
+    selecting from popup menu</strong>
     </p>
     <p>
     You can select one of the two menu items from Send Screen
     </p>
-    <source>
-        <figure alt="" src="images/email6.png" />
-        <figure alt="" src="images/email7.png" />
-    </source>
-
+    <figure alt="" src="images/email6.png" />
+    <figure alt="" src="images/email7.png" />
     <p>
-    <b>Step 2 - You will then be presented with the following dialog</b>
+    <strong>Step 2 - You will then be presented with the following dialog</strong>
     </p>
     <p>
     Select Configure from the row of buttons at the bottom of the dialog
     </p>
-    <source>
-        <figure alt="" src="images/email1.png" />
-    </source>
+    <figure alt="" src="images/email1.png" />
 
     <p>
-    <b>Step 3 - Fill in the values on SMTP Properties Configuration dialog</b>
+    <strong>Step 3 - Fill in the values on SMTP Properties Configuration dialog</strong>
     </p>
-    <source>
-        <figure alt="" src="images/email2.png" />
-    </source>
-    <p>
+    <figure alt="" src="images/email2.png" />
       <table>
       <caption>SMTP Properties Configuration dialog fields</caption>
       <tr><th>Entry</th><th>Description</th></tr>
@@ -93,14 +85,9 @@
        </td>
        </tr>
        </table>
-    </p>
-
-    <source>
-        <figure alt="" src="images/email3.png" />
-    </source>
-
+    <figure alt="" src="images/email3.png" />
     <p>
-    <b>Step 4 - Click the left button labeled Done</b>
+    <strong>Step 4 - Click the left button labeled Done</strong>
     </p>
     <p>
     You will then be brought back to the Send E-Mail dialog.  Here the
@@ -108,12 +95,9 @@
     information was saved and is now available for editing and all should
     be ready to send.
     </p>
-    <source>
-        <figure alt="" src="images/email4.png" />
-    </source>
-
+    <figure alt="" src="images/email4.png" />
     <p>
-    <b>Step 5 - Fill in the information on the screen</b>
+    <strong>Step 5 - Fill in the information on the screen</strong>
     </p>
     <p>
     When finished filling in the information on the screen click the button,
@@ -122,9 +106,7 @@
     <p>
     You should now have successfully sent the message.
     </p>
-    <source>
-        <figure alt="" src="images/email5.png" />
-    </source>
+    <figure alt="" src="images/email5.png" />
 
    </section>
 

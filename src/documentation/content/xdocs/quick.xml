@@ -3,6 +3,7 @@
 <document>
   <header>
     <title>Quick Start</title>
+    <authors><person email="" name="Christian Geisert"/></authors>
   </header>
   <body>
     <p>
@@ -178,9 +179,9 @@
         can send enhanced commands.</p>
     <note>the -e can be used on all sessions.</note>
     </section>
-    <section><title>format of the session entries</title>
+    <section><title>Format of the session entries</title>
     <source>
-       systemName=route-to-host [options as described above]
+systemName=route-to-host [options as described above]
     </source>
     </section>
     <section><title>Sample sessions file</title>
@@ -199,7 +200,7 @@ spain=spain -f spain.prop -cp 284 -e
     Command line usage follows:
     </p>
     <source>
-    java -jar tn5250j.jar -s luxembourg
+java -jar tn5250j.jar -s luxembourg
     </source>
     <p>
     This will search the session file for the entry luxembourg and if found
@@ -227,38 +228,32 @@ spain=spain -f spain.prop -cp 284 -e
 <section><title>Configure a 5250 Display Session</title>
 
     <p>
-    <b>Step 1 - Start the emulator as described above</b>
+    <strong>Step 1 - Start the emulator as described above</strong>
     </p>
     <p>
     You will then be presented with the following screen
     </p>
-    <source>
-        <figure alt="" src="images/connect1.png" />
-    </source>
+    <figure alt="" src="images/connect1.png"/>
 
     <p>
-    <b>Step 2 - Click the Add button</b>
+    <strong>Step 2 - Click the Add button</strong>
     </p>
     <p>
     This will allow you to define a new session and it's options to be used
     within the emulator.
     </p>
-    <source>
-        <figure alt="" src="images/connect2.png" />
-    </source>
+    <figure alt="" src="images/connect2.png" />
 
     <p>
-    <b>Step 3 - Specify a name for the session</b>
+    <strong>Step 3 - Specify a name for the session</strong>
     </p>
     <p>
     The name supplied here identifies the session.
     </p>
-    <source>
-        <figure alt="" src="images/connect3.png" />
-    </source>
+    <figure alt="" src="images/connect3.png" />
 
     <p>
-    <b>Step 4 - Specify the IP Address</b>
+    <strong>Step 4 - Specify the IP Address</strong>
     </p>
     <ol>
         <li>
@@ -275,27 +270,21 @@ spain=spain -f spain.prop -cp 284 -e
         Connect dialog..
         </li>
     </ol>
-    <source>
-        <figure alt="" src="images/connect4.png" />
-    </source>
+    <figure alt="" src="images/connect4.png" />
 
     <p>
-    <b>Step 5 - Select Connect</b>
+    <strong>Step 5 - Select Connect</strong>
     </p>
     <p>
     From the Connect dialog select your new session with the mouse so that
     it is highlighted and then click Connect or Alt-C.
     </p>
-    <source>
-        <figure alt="" src="images/connect5.png" />
-    </source>
+    <figure alt="" src="images/connect5.png" />
 
     <p>
-    <b>You should now be presented with a sign on screen</b>
+    <strong>You should now be presented with a sign on screen</strong>
     </p>
-    <source>
-        <figure alt="" src="images/connect7.png" />
-    </source>
+    <figure alt="" src="images/connect7.png" />
 
 </section>
 
