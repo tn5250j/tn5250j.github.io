@@ -36,7 +36,7 @@
       <p>
       While I was at it I also wanted it to work on different operating systems,
       thus Java giving the "j" at the end (yes there are others but I do not have any
-      experience with them). I started changing the tn5250 for linux source but after
+      experience with them). I started changing the <jump href="http://tn5250.sourceforge.net/">TN5250</jump> for linux source but after
       thinking about it I thought "Well hell if I am going to start debugging and
       enhancing this one why not try and build my own. Also; while I was at it,
       some of the ideas could be made available for my Windows handicapped developers
@@ -61,6 +61,13 @@
       out was a well known, widely used emulator.</p>
       <p>
       Lets see where it goes from here.</p>
-    </section> 
+
+      <p>
+        <jump href="http://tn5250.sourceforge.net/">TN5250 for linux.</jump>
+      </p>
+      <p>
+        They also have a windows version.
+      </p>
+    </section>
   </body>
 </document>

@@ -10,6 +10,7 @@
     <menu-item label="Introduction" href="index.html"/>
     <menu-item label="Features" href="features.html"/>
     <menu-item label="Screenshots" href="screenshots.html"/>
+    <menu-item label="tn5250j at sourceforge" href="http://sourceforge.net/projects/tn5250j"/>
     <menu-item label="Download" href="http://sourceforge.net/project/showfiles.php?group_id=22923"/>
     <menu-item label="Mailing Lists" href="http://sourceforge.net/mail/?group_id=22923"/>
     <menu-item label="Acknowledgements" href="acks.html"/>
@@ -28,6 +29,7 @@
     <menu-item label="File Transfers" href="filetrans.html"/>
     <menu-item label="Macros" href="macros.html"/>
     <menu-item label="Proxy Support" href="proxy.html"/>
+    <menu-item label="Scripting" href="scripting.html"/>
   </menu>
 
   <menu label="Developer Docs">

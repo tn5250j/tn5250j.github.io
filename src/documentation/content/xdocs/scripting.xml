@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.1//EN" "document-v11.dtd">
+<document>
+  <header>
+    <title>Scripting</title>
+  </header>
+  <body>
+
+    <p>
+This version of the emulator allows scripting using the python language.  This
+is accomplished using the jython library.
+    </p>
+    <p>
+        <jump href="http://www.jython.org/">Jython Home Page</jump>
+    </p>
+
+  <section><title>What is it</title>
+
+    <p>
+You can interract with the emulator such as:
+    </p>
+    
+    <source>
+ screen = _session.getScreen()
+ screen.sendKeys("[enter]")
+
+    </source>
+    <p>
+ to send keystrokes.
+    </p>
+
+    <p>
+ ----------------------------
+ Popup frames and labels:
+ ----------------------------
+    </p>
+    <source>
+ win = swing.JFrame("tn5250j test window")
+ win.size = (300,400)
+ win.contentPane.background = awt.Color.white
+ label = swing.JLabel("Hello all you tn5250j'ers script writers")
+ label.foreground = awt.Color.red
+ win.contentPane.add(label)
+ win.show()
+    </source>
+    <p>
+ -------------------
+ Access to fields:
+ -------------------
+    </p>
+    <source>
+ screen = _session.getScreen()
+
+ screenfields = screen.getScreenFields()
+
+ fields = screenfields.getFields()
+
+ for x in fields:
+     print x.toString()
+     print x.getText()
+
+ print "number of fields %s " % screenfields.getSize()
+
+    </source>
+
+    <p>
+ Now the fun part.  Repetative tasks.  This is really cool as well.
+ ------------------------------------------------------------------
+    </p>
+    <source>
+ screen = _session.getScreen()
+
+ while not _session.isStopMacroRequested():
+     screen.sendKeys("[pf5]")
+     time.sleep(5)
+    </source>
+
+    <p>
+ Four lines and you have a continuas refresh every 5 seconds until you turn
+ it off.
+    </p>
+    <note>
+ The session.isStopMacroRequested() is very important here!!!
+    </note>
+    <p>
+  Is this not the best thing ever.
+    </p>
+ ---------------------------------------------------------------
+    <p>
+ All in python.  Very powerful and fun to write.
+    </p>
+
+    </section>
+
+  <section><title>Install</title>
+
+    <p>
+ 1.  go to <jump href="http://sourceforge.net/projects/jython">http://sourceforge.net/projects/jython</jump> and download the latest
+ release.
+    </p>
+    <p>
+ 2.  install jython.  Follow their directions.  It is very simple
+    </p>
+    <note>
+    Steps one and two are only necessary if you want to have the full jython
+    environment.  It is not necessary to install the full package as it is
+    distributed with the emulator via CVS or within the tn5250j-x.x.x-bin-scripting.zip
+    file in the downloads section.  Go ahead and download it to show them your support.
+    You will also be able to test out the functionality of the jython in an interactive
+    environment.
+    </note>
+    <p>
+ 3.  checkout or update from CVS the tn5250j emulator.
+    </p>
+    <p>
+ 4.  move the jython.jar file from where you installed jython and place it in
+ your libs directory of the build directory.  This will follow the same
+ procedure as for setting up e-mail.  Tip: you do not have to install jython
+ on every computer just the jython.jar file.
+    </p>
+    <p>
+ 5.  from command line for ant execute the following
+
+ >ant all
+    </p>
+    <note>
+    Step five is for compiling from CVS only.  If you downloaded the bin-scripting.zip
+    file then you have all the files necessary.
+    </note>
+    <p>
+
+ 6.  Create a directory underneath called "scripts".  This is hardcoded so
+ that all scripts are based off the scripts directory.
+    </p>
+    <p>
+ 7.  When everything builds, fire up the emulator making sure the jython.jar
+ file is in the directoy, same as for setting up e-mail.
+    <note>
+    Make sure the jython.jar file is in the same directory you installed the 
+    tn5250j.jar.
+    </note>
+    </p>
+    <p>
+ 8.  Copy the sample scripts to the scripts directory.  Available in the source download.
+    </p>
+    <p>
+ 9.  Hit Alt-R to receive a Run Script prompt and type in the full name of
+ the script.  Such as testwin.py or testlooping.py
+    </p>
+    <p>
+ 10. Or from the popup menu all the scripts in the directory should appear
+     in the macros sub menu
+    </p>
+    <p>
+<strong>Enjoy!!!</strong>
+    </p>
+    </section>
+
+  </body>
+</document>
