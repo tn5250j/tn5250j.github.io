@@ -4,6 +4,9 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="1.0">
 
+  <xsl:param name="isfaq"/>
+  <xsl:param name="resource"/>
+
 <!-- ====================================================================== -->
 <!-- document section -->
 <!-- ====================================================================== -->
@@ -34,7 +37,8 @@
                      <xsl:value-of select="@name" />
                   </xsl:for-each>
               </div>
-         </xsl:if>           
+         </xsl:if>
+
       </body>
       </document>
    </xsl:if>
@@ -56,26 +60,65 @@
 <!-- body section -->
 <!-- ====================================================================== -->
 
-   <xsl:template match="section">
+    <xsl:template match="body">
+    <xsl:if test="section and not($isfaq='true')">
+      <ul class="minitoc">
+        <xsl:for-each select="section">
+          <li>
+            <a href="#{generate-id()}">
+              <xsl:value-of select="title"/>
+            </a>
+            <xsl:if test="section">
+              <ul class="minitoc">
+                <xsl:for-each select="section">
+                  <li>
+                    <a href="#{generate-id()}">
+                      <xsl:value-of select="title"/>
+                    </a>
+                  </li>
+                </xsl:for-each>
+              </ul>
+            </xsl:if>
+          </li>
+        </xsl:for-each>
+      </ul>
+    </xsl:if>
+<!--
+    <table><tr>
+    <td align="center" width="80" nowrap="nowrap">
+      <a href="{$resource}.pdf" class="dida"><img border="0"
+      src="skin/images/printer.gif"/><br/>
+              PDF version</a></td>
+    </tr></table>
+-->
+    
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="section">
+    <a name="{generate-id()}"/>
+    <!--<xsl:if test="normalize-space(@id)!=''">
+      <a name="{@id}"/>-->
 
 	 <xsl:variable name = "level" select = "count(ancestor::section)+1" />
 	 
 	 <xsl:choose>
 	 	<xsl:when test="$level=1">
-	 	  <h2><xsl:value-of select="@title"/></h2>
+	 	  <h2><xsl:value-of select="title"/></h2>
 	 	</xsl:when>
 	 	<xsl:when test="$level=2">
-	 	  <h3><xsl:value-of select="@title"/></h3>
+	 	  <h3><xsl:value-of select="title"/></h3>
 	 	</xsl:when>
 	 	<xsl:when test="$level=3">
-	 	  <h4><xsl:value-of select="@title"/></h4>
+	 	  <h4><xsl:value-of select="title"/></h4>
 	 	</xsl:when>
 	 	<xsl:otherwise>
-	 	  <h5><xsl:value-of select="@title"/></h5>
+	 	  <h5><xsl:value-of select="title"/></h5>
 	 	</xsl:otherwise>
 	 </xsl:choose>
 
-	 <div class="section"><xsl:apply-templates/></div>	 
+	 <!--<div class="section"><xsl:apply-templates/></div>-->	 
+	 <div class="section"><xsl:apply-templates select="*[not(self::title)]"/></div>	 
 	      
 	</xsl:template>  
     
@@ -95,10 +138,24 @@
     <p><xsl:apply-templates/></p>
   </xsl:template>
 
-  <xsl:template match="note">
-   <p><i><xsl:apply-templates/></i></p>
-  </xsl:template>
+  <xsl:template match="note | warning | fixme">
+    <div class="frame {local-name()}">
+      <div class="label">
+        <xsl:choose>
+          <xsl:when test="local-name() = 'note'">Note</xsl:when>
+          <xsl:when test="local-name() = 'warning'">Warning</xsl:when>
+          <xsl:otherwise>Fixme (
+               <xsl:value-of select="@author"/>
 
+               )</xsl:otherwise>
+        </xsl:choose>
+      </div>
+      <div class="content">
+        <xsl:apply-templates/>
+      </div>
+    </div>
+  </xsl:template>
+  
   <xsl:template match="source">
     <div class="code"><pre><xsl:apply-templates/></pre></div>
   </xsl:template>
@@ -144,10 +201,12 @@
 <!-- ====================================================================== -->
 
   <xsl:template match="table">
-    <table>
+    <div class="content">
+    <table class="table" cellpadding="4" cellspacing="1">
       <caption><xsl:value-of select="caption"/></caption>
       <xsl:apply-templates/>
     </table>
+    </div>
   </xsl:template>
 
   <xsl:template match="tr">
@@ -155,24 +214,21 @@
   </xsl:template>
 
   <xsl:template match="th">
-    <td colspan="{@colspan}" rowspan="{@rowspan}">
-        <b><xsl:apply-templates/></b>&#160;
-    </td>
+    <th><xsl:apply-templates/>&#160;</th>
   </xsl:template>
 
   <xsl:template match="td">
-    <td colspan="{@colspan}" rowspan="{@rowspan}">
-        <xsl:apply-templates/>&#160;
-    </td>
+    <td><xsl:apply-templates/>&#160;</td>
   </xsl:template>
 
+  <!--
   <xsl:template match="tn">
     <td colspan="{@colspan}" rowspan="{@rowspan}">
       &#160;
     </td>
   </xsl:template>
-  
-  <xsl:template match="caption">
+-->
+<xsl:template match="caption">
     <!-- ignore since already used -->
   </xsl:template>
 

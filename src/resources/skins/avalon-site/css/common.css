@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	padding: 0px;
 	margin: 0px;
-	margin-left: 40px;
+	/*margin-left: 40px;*/
 }
 h1 {
 	border: 1px solid #003366;
@@ -74,22 +74,16 @@ h6 {
 	color: #3333CC;
 	margin-left: 0px;
 }
+
+ul.minitoc {
+  margin-bottom: 30px;
+}
+
 a, a:visited {
 	color: #336699;
 }
 a:hover, a:active {
 	color: #003366;;
-}
-#breadcrumbs {
-	border-top: 1px solid #003366;
-	border-bottom: 1px solid #003366;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	padding-top: 0px;
-	padding-bottom: 2px;
-	padding-left: 10px;
-	font-size: 10pt;
-	font-weight: bold;
 }
 #menu {
 	border: 1px solid #003366;
@@ -142,25 +136,49 @@ a.breadcrumbs:hover, a.breadcrumbs:active, a.menu:hover, a.menu:active {
 	text-decoration: underline;
 }
 .section {
-	margin-left: 40px;
+	/*margin-left: 40px;*/
 }
 .code {
 	font-family: Courier, Courier New, monospace;
-	padding: 4px;
+	padding-left: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	border: 1px solid #003366;
 }
 .code, pre {
 	font-size: 11px;
 }
 .section .code {
-	margin-left: -40px;
+	/*margin-left: -40px;*/
 }
 .section .section .code {
-	margin-left: -80px;
+	/*margin-left: -80px;*/
 }
 .fixed {
       	font-family: Courier, Courier New, monospace;
-       }
+}
+
+.content { padding: 5px 5px 5px 10px;  font : small;  font-size : 12px;   }
+
+.frame { margin: 20px 20px 20px 20px; font-size: 12px; }
+.frame .content { margin: 0px; }
+
+.note { border: solid 1px #7099C5; background-color: #f0f0ff; }
+.note .label { background-color: #7099C5; color: #ffffff; }
+
+.warning { border: solid 1px #D00000; background-color: #fff0f0; }
+.warning .label { background-color: #D00000; color: #ffffff; }
+
+.fixme { border: solid 1px #C6C600; background-color: #FAF9C3; }
+.fixme .label { background-color: #C6C600; color: #ffffff; }
+
+.content table { width: 100%; background-color: #7099C5;
+                 color: #ffffff;  font-size : 12px;
+                 border: 1;}
+.content table .caption { text-align: left; color: black; font-size : 12px; }
+.content table .th { text-align: center;  font-size : 12px;}
+.content td { background-color: #f0f0ff; color: black;  font-size : 12px;}
+
 @media print {
 	body td {
 		font-family: Times New Roman, Zurich Bt, serif;
