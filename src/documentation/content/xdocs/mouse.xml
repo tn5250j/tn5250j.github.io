@@ -9,34 +9,7 @@
     <p>
     Right click on session screen pulls up a menu as follows:</p>
 <source>
-:=====================:
-: Copy                :
-: Paste               :
-: Paste Special       :
-:---------------------:
-: Selected Columns XX :
-: Selected Rows XX    :
-: Sum Area          > :
-:---------------------:
-: Print Screen        :
-:---------------------:
-: System Request      :
-: Help                :
-: Host Print          :
-: Display Messages    :
-:---------------------:
-: Hex Map             :
-: Map Keys...         :
-: Settings...         :
-:---------------------:
-: Macros            > :
-:---------------------:
-: Transfer File...    :
-: Send Screen         :
-:---------------------:
-: Connect/Disconnect  :
-: Close this session  :
-:=====================:
+   <figure alt="" src="images/menu1.png" width="175" height="400"/>
 </source>
   </body>
 </document>

@@ -6,8 +6,10 @@
   </header> 
   <body> 
     <ol>
-      <li>Place the my5250.jar file in a directory that you choose.</li>
+      <li>Place the tn5250j.jar file in a directory that you choose.</li>
       <li>For e-mailing screen shots please read the e-mail.txt file included in the
+        source file that was downloaded.</li>
+      <li>For scripting via the python please read the scripting.txt file included in the
         source file that was downloaded.</li>
     </ol>
   </body>
