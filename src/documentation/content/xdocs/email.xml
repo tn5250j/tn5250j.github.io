@@ -11,8 +11,13 @@
     <ol>
         <li>Download the e-mail api's from sun.  You will need two packages.
           <ul>
-            <li>http://java.sun.com/products/javamail/</li>
-            <li>http://java.sun.com/products/javabeans/glasgow/jaf.html</li>
+            <li>
+                <jump href="http://java.sun.com/products/javamail/">http://java.sun.com/products/javamail/</jump>
+                <!-- link href="http://java.sun.com/products/javamail/">http://java.sun.com/products/javamail/</link -->
+            </li>
+            <li>
+                <jump href="http://java.sun.com/products/javabeans/glasgow/jaf.html">http://java.sun.com/products/javabeans/glasgow/jaf.html</jump>
+            </li>
           </ul></li>
         <li>Unzip the files into there respective directories.  I use the same directory
         names as provided within the zip files.</li>
@@ -21,18 +26,23 @@
   <section><title>Deployment</title>
     <p>
     Copy the file activation.jar from the /jaf-1.0.1 file to the SAME DIRECTORY as
-    the my5250.jar.</p>
+    the tn5250j.jar.</p>
     <p>Copy the files</p>
       <ul>
         <li>mail.jar</li>
         <li>mailapi.jar</li>
         <li>smtp.jar</li>
       </ul>
-      <p>to te SAME DIRECTORY as the my5250.jar.</p>
+      <p>to te SAME DIRECTORY as the tn5250j.jar.</p>
       <p>
-      If you list the directory where the my5250.jar file is you should see 4 files
+      If you list the directory where the tn5250j.jar file is you should see 4 files
       with the extension .jar.  If this is not true then go to step one of Deployment
       and start again.</p>
+      <note>
+      The following step for creating the SMTPProperties.cfg file is not longer necessary.
+      It can be configured from the Send E-mail Screen by selecting the Configure button.
+      See below screen shots.
+      </note>
       <p>
       Now within the same directory create a file named <code>SMTPProperties.cfg</code></p>
       <p>Within this file type or copy and paste following:</p>
@@ -103,7 +113,7 @@
 </security>
 <resources>
 <j2se version="1.3+" inital-heap-size="64m" max-heap-size="256m"/>
-<jar href="my5250.jar" main="true" download="eager"/>
+<jar href="tn5250j.jar" main="true" download="eager"/>
 <jar href="activation.jar"/>
 <jar href="mail.jar"/>
 <jar href="mailapi.jar"/>
