@@ -9,7 +9,7 @@
 			<title><xsl:value-of select="/site/document/title"/></title>
 			<meta name="author" value="Leo Simons" />
 			<meta name="email" value="leosimons@apache.org" />
-			
+			<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
 			<link rel="stylesheet" type="text/css" href="skin/common.css" />
 </head>
 <body>
