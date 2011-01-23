@@ -65,9 +65,7 @@
     </div>
 									<!-- end menu column -->
 <p>
-            Hosted by: <a href="http://sourceforge.net">
-            <img src="http://sourceforge.net/sflogo.php?group_id=22923"
-               width="88" height="31" border="0" alt="SourceForge Logo"/></a>
+    <a href="http://sourceforge.net/projects/tn5250j"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=22923&amp;type=13" width="120" height="30" alt="Get tn5250J at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a>
 </p>
 									</td>
 									<!-- spacer -->
