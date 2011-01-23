@@ -70,6 +70,7 @@
       the same. There are a lot of programmers out there that do not like to
       touch the mouse (I guess we are getting fewer but maybe that is where the
       linux users come in).</dd>
+      
       <dt>Attribute settings for screen/session</dt>
       <dd>This is given on all emulators that I have tried. Just thought I
       would list it here. Although at this time tn5250j does not allow you
@@ -83,6 +84,13 @@
       is also spoken but we have no systems that need to display the German character
       sets) and the colors allow them to visually distinguish the systems.
       I hope to see more languages from you. Let me know and I will put them in.</dd>
+      
+      <dt>SSL Support</dt>
+      <dd>
+      	Starting with version 0.5.5 and current 0.5.5beta3 the emulator will now support Secure Sockets.
+      	As of version 0.6.2, the SSL support was reworked for better compatibility.
+      </dd>
+      
     </dl>
  </body>
 </document>
