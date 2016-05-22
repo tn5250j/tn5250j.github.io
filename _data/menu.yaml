@@ -8,6 +8,10 @@ About:
 Documentation:
   Installation: /docs/installation/
   Quick Start: /docs/quick-start/
+  Keybindings: /docs/keybindings/
+  Menu Options: /docs/menu-options/
 
 Developers:
   Source: //github.com/tn5250j/tn5250j
+  Building: /dev/build/
+  References: /dev/references/
