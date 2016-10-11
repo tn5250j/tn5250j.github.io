@@ -311,6 +311,18 @@ main
         li {
             margin: 5px 0;
         }
+        
+        thead {
+            text-align: left;
+        }
+        
+        td {
+            vertical-align: top;
+        }
+        
+        #ibm-manuals + table th:first-child  {
+            width : 8em;
+        }
 
         p > code,
         li > code {
