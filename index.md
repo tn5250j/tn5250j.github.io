@@ -6,7 +6,7 @@ permalink: /
 
 ## Introduction
 
-The tn5250j is a 5250 terminal emulator for the AS/400 written in Java. It was created because there was no terminal emulator for Linux with features like continued edit fields, gui windows, cursor progression fields etc....
+The tn5250j is a 5250 terminal emulator for the IBMi (AS/400) written in Java. It was created because there was no terminal emulator for Linux with features like continued edit fields, gui windows, cursor progression fields etc....
 
 From there it has seemed to go off in all sorts of directions. Now there are 3 modes:
 
