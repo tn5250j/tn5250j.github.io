@@ -14,7 +14,7 @@ Document | Description
 [RFC 860](http://www.faqs.org/rfcs/rfc860.html) | Telnet Timing Mark Option
 [RFC 885](http://www.faqs.org/rfcs/rfc885.html) | Telnet End Of Record Option
 [RFC 1091](http://www.faqs.org/rfcs/rfc1091.html) | Telnet Terminal-Type Option
-[RFC 1025](http://www.faqs.org/rfcs/rfc1025.html) | 5250 Telnet Interface
+[RFC 1205](http://www.faqs.org/rfcs/rfc1205.html) | 5250 Telnet Interface
 [RFC 1572](http://www.faqs.org/rfcs/rfc1572.html) | Telnet Environment Option
 [RFC 2877](http://www.faqs.org/rfcs/rfc2877.html) | 5250 Telnet Enhancements. This standard extends RFC 1205 and includes a useful list of references in section 13.
 
