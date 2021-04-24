@@ -14,6 +14,11 @@ From there it has seemed to go off in all sorts of directions. Now there are 3 m
 - Enhanced mode that implements the features that I wanted like masked edit fields and those listed above.
 - The third is a gui mode that turns the bland green-screen into a windows gui (See screen shots).
 
+![screenshot1](./assets/demo1.jpg)
+![screenshot2](./assets/demo2.jpg)
+![screenshot3](./assets/demo3.jpg)
+![screenshot4](./assets/demo4.jpg)
+
 ## History
 
 The project was open sourced to give something back to all those hackers and code churners that work so hard to provide the Linux and Open Source communities with quality work and software.
